@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose')
 const { countConnect } = require('../helpers/check.connect')
-const connectString = "mongodb+srv://duclinh2207:duclinh123@cluster0.0yjitof.mongodb.net/?retryWrites=true&w=majority";
+const {db: { username, password }} = require('../configs/config.mongodb')
+
+const connectString = `mongodb+srv://${username}:${password}@cluster0.0yjitof.mongodb.net/?retryWrites=true&w=majority`;
 
 class Database {
     constructor() {
